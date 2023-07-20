@@ -1,0 +1,78 @@
+.footer {
+  grid-area: footer;
+  background-color: $background_color;
+  display: grid;
+  grid-template-areas:
+          "logo contact contact"
+          "legales legales legales";
+
+  justify-content: space-between;
+  align-items: center;
+
+  &__brand {
+    grid-area: logo;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0 $spacing_medium;
+  }
+
+  &__contact {
+    grid-area: contact;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0 $spacing_medium;
+
+    &__methods {
+      font-weight: bold;
+      font-style: oblique;
+      color:$terceary_color;
+    }
+    &__container {
+      padding: $spacing_small 0;
+    }
+  }
+
+  &__legal {
+    grid-area: legales;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #caf279;
+
+    &__text {
+      margin: $spacing_small 0;
+      padding: $spacing_small 0;
+      text-align: center;
+      font-style: italic;
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .footer {
+    grid-template-areas: 
+    "logo"
+    "legales"
+    "contact";
+
+    &__brand {
+      display: none;
+    }
+
+    &__contact {
+      flex-direction: column;
+
+      &__methods {
+        font-size: small;
+        padding: $spacing_small 0;
+      }
+      
+    }
+  }
+}

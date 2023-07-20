@@ -1,0 +1,234 @@
+/* hoja de estilos que resetea los estilos por defecto de los navegadores */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+body {
+  display: grid;
+  grid-template-areas: "header header header header" "main main main main" "footer footer footer footer";
+}
+
+@media only screen and (max-width: 400px) {
+  body {
+    overflow-x: hidden;
+  }
+}
+.header {
+  grid-area: header;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 8px 16px;
+  color: black;
+}
+.header__brand {
+  display: flex;
+  flex-direction: column;
+}
+.header__brand__link {
+  animation-name: fadeIn;
+  animation-duration: 4s;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.header__brand__text {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+.header__nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.header__nav__button {
+  display: none;
+}
+.header__nav__label {
+  display: none;
+}
+.header__nav__item {
+  margin-right: 16px;
+  font-size: 1rem;
+  font-weight: bold;
+  font-style: italic;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.header__nav__item:hover {
+  border-bottom: 2px solid #229F44;
+  transform: scale(1.1);
+}
+.header__nav__item__link {
+  color: #229F44;
+  text-decoration: none;
+}
+.header__watch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__watch__link {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.header__watch__link__icon {
+  height: 10%;
+  width: 10%;
+}
+
+@media only screen and (max-width: 400px) {
+  .header {
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+  .header__brand {
+    justify-content: center;
+    align-items: center;
+  }
+  .header__nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .header__nav__item {
+    margin-right: 0;
+    margin-bottom: 8px;
+  }
+  .header__nav__item__link {
+    text-align: center;
+  }
+  .header__watch {
+    display: none;
+  }
+}
+.footer {
+  grid-area: footer;
+  background-color: white;
+  display: grid;
+  grid-template-areas: "logo contact contact" "legales legales legales";
+  justify-content: space-between;
+  align-items: center;
+}
+.footer__brand {
+  grid-area: logo;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0 16px;
+}
+.footer__contact {
+  grid-area: contact;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0 16px;
+}
+.footer__contact__methods {
+  font-weight: bold;
+  font-style: oblique;
+  color: #9AA0A8;
+}
+.footer__contact__container {
+  padding: 8px 0;
+}
+.footer__legal {
+  grid-area: legales;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #caf279;
+}
+.footer__legal__text {
+  margin: 8px 0;
+  padding: 8px 0;
+  text-align: center;
+  font-style: italic;
+}
+
+@media only screen and (max-width: 400px) {
+  .footer {
+    grid-template-areas: "logo" "legales" "contact";
+  }
+  .footer__brand {
+    display: none;
+  }
+  .footer__contact {
+    flex-direction: column;
+  }
+  .footer__contact__methods {
+    font-size: small;
+    padding: 8px 0;
+  }
+}
+.main {
+  grid-area: main;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  padding: 8px;
+  animation-name: zoomIn;
+  animation-duration: 2s;
+  grid-area: main;
+  background-color: white;
+  background-image: url("/img/45degreee_fabric.webp");
+  background-repeat: repeat;
+}
+.main > header > h1 {
+  font-size: 3rem;
+  color: #f2c579;
+  text-align: center;
+  margin: 0;
+  padding: 16px;
+}
+
+@media only screen and (max-width: 400px) {
+  .main {
+    padding: 16px;
+    margin: 0;
+  }
+}
+.video__frame {
+  height: 100%;
+  width: 100%;
+}
+
+@media only screen and (max-width: 400px) {
+  .video__frame {
+    height: 100%;
+    width: 100%;
+  }
+}
+.btn-primary {
+  background-color: #f2c579;
+}
+
+/*# sourceMappingURL=main.css.map */
